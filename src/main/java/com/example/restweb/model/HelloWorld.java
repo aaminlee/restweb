@@ -2,7 +2,10 @@ package com.example.restweb.model;
 
 public class HelloWorld {
 
-    private final String message;
+    private String message;
+
+    public HelloWorld() {
+    }
 
     public HelloWorld(String message) {
         this.message = message;
