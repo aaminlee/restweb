@@ -13,7 +13,7 @@ import java.util.Locale;
 
 import static org.junit.Assert.assertEquals;
 
-@ExtendWith(SpringExtension.class)
+//@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 class HelloWorldControllerTest {
 
@@ -37,14 +37,9 @@ class HelloWorldControllerTest {
 
     @Test
     void helloWorldPathVariable() {
-        String resultMsg = restTemplate.getForObject("http://localhost:8080/hello-world/path-variable/{name}", String.class, "Aamin");
+        String resultMsg = restTemplate.getForObject("http://localhost/hello-world/path-variable/{name}", String.class, "Aamin");
         assertEquals("Hello World :  Aamin", resultMsg);
     }
-
-//    @Test
-//    void helloWorldInternationalized() {
-//        assertEquals("Good Morning", restTemplate.getForObject("/hello-world-internationalized", String.class));
-//    }
 
     @Test
     void helloWorldInternationalized_DE() {

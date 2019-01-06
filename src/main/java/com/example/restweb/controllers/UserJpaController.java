@@ -37,7 +37,7 @@ public class UserJpaController {
     }
 
     @GetMapping("/jpa/users/{id}")
-    public Resource<User> retrieveUser(@PathVariable("id") int id) {
+    public ResponseEntity<Object> retrieveUser(@PathVariable("id") int id) {
         User user = userRepository.findById(id).orElse(null);
         if (user == null) {
             throw new UserNotFoundException("id- " + id);
@@ -47,8 +47,9 @@ public class UserJpaController {
         ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
         resource.add(linkTo.withRel("all-users"));
 
-        return resource;
+        return ResponseEntity.ok(resource);
     }
+
 
     @PostMapping("/jpa/users")
     public ResponseEntity<Object> createUser(@Valid @RequestBody User user) {

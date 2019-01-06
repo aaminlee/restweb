@@ -2,8 +2,6 @@ package com.example.restweb.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import javafx.geometry.Pos;
-import springfox.documentation.swagger.readers.operation.OperationNotesReader;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

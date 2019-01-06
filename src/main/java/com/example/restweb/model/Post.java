@@ -17,6 +17,14 @@ public class Post {
     @JsonIgnore
     private User user;
 
+    public Post() {
+    }
+
+    public Post(int id, String description) {
+        this.id = id;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
