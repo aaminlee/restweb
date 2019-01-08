@@ -43,13 +43,12 @@ class UserJpaControllerTest {
     UserJpaController controller;
 
     private List<User> users;
-    private List<Post> posts;
 
     private MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {
-        posts = Arrays.asList(
+        List<Post> posts = Arrays.asList(
                 new Post(1, "First Test Post"),
                 new Post(1, "Second Test Post")
         );
